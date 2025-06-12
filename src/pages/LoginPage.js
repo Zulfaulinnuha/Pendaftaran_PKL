@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
-import sarastyaLogo from "../assets/sarastya-logo.png"; // Pastikan file ini tersedia
+import sarastyaLogo from "../assets/sarastya-logo.png";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -13,7 +13,7 @@ function LoginPage() {
       const res = await fetch("http://localhost:5000/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await res.json();
@@ -33,6 +33,15 @@ function LoginPage() {
 
   return (
     <div className="login-page">
+      <div className="wave-header">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path
+            fill="#1565c0"
+            d="M0,128L80,128C160,128,320,128,480,144C640,160,800,192,960,186.7C1120,181,1280,139,1360,117.3L1440,96V0H0Z"
+          ></path>
+        </svg>
+      </div>
+
       <div className="login-card">
         <img src={sarastyaLogo} alt="Sarastya Logo" className="login-logo" />
         <form onSubmit={handleLogin} className="login-form">
@@ -55,9 +64,11 @@ function LoginPage() {
           <button type="submit" className="login-button">Masuk</button>
         </form>
         {message && <p className="login-message">{message}</p>}
-        <div className="login-footer">
-        </div>
       </div>
+
+      <footer className="login-footer">
+        <p>&copy; {new Date().getFullYear()} Sarastya. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

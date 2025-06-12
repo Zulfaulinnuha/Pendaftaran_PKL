@@ -14,7 +14,7 @@ function RegisterPage() {
       const res = await fetch("http://localhost:5000/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password })
+        body: JSON.stringify({ name, email, password }),
       });
 
       const data = await res.json();
@@ -34,6 +34,15 @@ function RegisterPage() {
 
   return (
     <div className="register-page">
+      <div className="wave-header">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path
+            fill="#1565c0"
+            d="M0,128L80,128C160,128,320,128,480,144C640,160,800,192,960,186.7C1120,181,1280,139,1360,117.3L1440,96V0H0Z"
+          ></path>
+        </svg>
+      </div>
+
       <div className="register-card">
         <img src={sarastyaLogo} alt="Sarastya Logo" className="register-logo" />
         <h2 className="register-title">Pendaftaran PKL Sarastya</h2>
@@ -66,6 +75,10 @@ function RegisterPage() {
         </form>
         {message && <p className="register-message">{message}</p>}
       </div>
+
+      <footer className="register-footer">
+        <p>&copy; {new Date().getFullYear()} Sarastya. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

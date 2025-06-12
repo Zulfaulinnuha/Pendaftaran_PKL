@@ -1,11 +1,15 @@
 * {
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #e3f2fd, #bbdefb);
-  color: #0d47a1;
+  background: #ffffff;
+  color: #003366;
 }
 
 .page-wrapper {
@@ -14,13 +18,24 @@ body {
   min-height: 100vh;
 }
 
+/* Navbar */
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1px 24px;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 16px 24px; /* sebelumnya 1px — terlalu tipis */
+  background: linear-gradient(to right, #0d47a1, #1976d2);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.navbar * {
+  margin: 0;
+  padding: 0;
 }
 
 .nav-left {
@@ -29,15 +44,24 @@ body {
   gap: 30px;
 }
 
+.nav-logo-container {
+  background-color: white;
+  padding: 6px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav-logo {
-height: 32px; 
-object-fit: contain;
-margin: 0;
-padding: 0;
+  height: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
 }
 
 .nav-links a {
-  color: #0d47a1;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 400;
   margin-right: 20px;
@@ -45,7 +69,7 @@ padding: 0;
 }
 
 .nav-links a:hover {
-  color: #1565c0;
+  color: #bbdefb;
 }
 
 .nav-right {
@@ -64,23 +88,25 @@ padding: 0;
 
 .nav-login {
   background: transparent;
-  border: 2px solid #0d47a1;
-  color: #0d47a1;
+  border: 2px solid #ffffff;
+  color: #ffffff;
 }
 
 .nav-signup {
-  background: #0d47a1;
-  color: white;
+  background: #ffffff;
+  color: #0d47a1;
   border: none;
 }
 
+/* Hero/Main Section */
 .main-section {
   display: flex;
   flex: 1;
-  padding: 80px 60px;
+  padding: 80px 60px 40px;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
 }
 
 .text-content {
@@ -92,29 +118,94 @@ padding: 0;
   font-size: 3rem;
   margin-bottom: 20px;
   color: #0d47a1;
+  font-weight: normal;
 }
 
 .text-content p {
   font-size: 1.2rem;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   color: #1565c0;
 }
 
+/* Tagline (baris kedua kalimat) */
+.tagline-text {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 5px;
+  color: #003366;
+}
+
+/* Gambar */
 .image-content {
   flex: 1;
   text-align: center;
 }
 
 .hero-img {
-max-width: 500px;
-width: 300%;
-height: auto;
+  max-width: 500px;
+  width: 300%;
+  height: auto;
 }
 
+/* Info Section */
+.info-section {
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  border-left: 5px solid #0d47a1;
+  padding: 20px 40px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  font-size: 16px;
+  color: #0d47a1;
+}
+
+.info-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #0d47a1;
+}
+
+.info-section p,
+.info-section ul {
+  font-size: 14px;
+  margin: 6px 0;
+  line-height: 1.4;
+  color: #333;
+}
+
+.info-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-section li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.info-section li::before {
+  content: "📌 ";
+  margin-right: 4px;
+}
+
+/* Footer (gabungan dari dua sebelumnya) */
 .social-footer {
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
   text-align: center;
-  padding: 10px;
-  background-color: #002171;
+  font-size: 14px;
+}
+
+.follow-text {
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .social-footer a {
@@ -128,6 +219,7 @@ height: auto;
   color: white;
 }
 
+/* Responsive */
 @media screen and (max-width: 768px) {
   .main-section {
     flex-direction: column;
@@ -135,13 +227,20 @@ height: auto;
     text-align: center;
   }
 
-  .text-content,
-  .image-content {
-    width: 100%;
+  .text-content {
+    padding: 0;
+    margin: auto;
+    max-width: 100%;
+  }
+
+  .info-section {
+    padding: 20px;
+    text-align: left;
+    margin: 10px;
   }
 
   .hero-img {
-    width: 80%;
-    margin-top: 30px;
+    width: 100%;
+    max-width: 300px;
   }
 }

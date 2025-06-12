@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  color: #0d47a1;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 24px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-logo {
+height: 32px; 
+object-fit: contain;
+margin: 0;
+padding: 0;
+}
+
+.nav-links a {
+  color: #0d47a1;
+  text-decoration: none;
+  font-weight: 400;
+  margin-right: 20px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #1565c0;
+}
+
+.nav-right {
+  display: flex;
+  gap: 10px;
+  margin-right: 20px;
+}
+
+.nav-login,
+.nav-signup {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-login {
+  background: transparent;
+  border: 2px solid #0d47a1;
+  color: #0d47a1;
+}
+
+.nav-signup {
+  background: #0d47a1;
+  color: white;
+  border: none;
+}
+
+.main-section {
+  display: flex;
+  flex: 1;
+  padding: 80px 60px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.text-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #0d47a1;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #1565c0;
+}
+
+.image-content {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-img {
+max-width: 500px;
+width: 300%;
+height: auto;
+}
+
+.social-footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #002171;
+}
+
+.social-footer a {
+  margin: 10px;
+  color: #bbdefb;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-footer a:hover {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .text-content,
+  .image-content {
+    width: 100%;
+  }
+
+  .hero-img {
+    width: 80%;
+    margin-top: 30px;
+  }
+}

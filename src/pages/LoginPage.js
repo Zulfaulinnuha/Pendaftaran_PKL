@@ -21,7 +21,7 @@ function LoginPage() {
       if (res.ok) {
         setMessage("✅ Login berhasil!");
         localStorage.setItem("token", data.token);
-        window.location.href = "/edit-profile";
+        window.location.href = "/LandingPage";
       } else {
         setMessage("❌ Login gagal: " + (data.message || "Email atau password salah"));
       }

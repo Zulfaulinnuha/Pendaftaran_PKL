@@ -1,23 +1,10 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import React from "react";
 import "./InformasiSarastya.css";
 
 function InformasiSarastya() {
-  const location = useLocation();
-
-  useEffect(() => {
-    const hash = location.hash;
-    if (hash) {
-      const el = document.querySelector(hash);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [location]);
-
   return (
     <div className="info-page">
-      <section id="tentang" className="info-section">
+      <section id="informasi-sarastya" className="info-section">
         <h2>Tentang Sarastya</h2>
         <p>
           Sarastya Internship Academy merupakan program pendidikan magang seperti PKL/Prakerin, Magang Pra Profesional, Magang Profesional dan sebagainya di SARASTYA yang bertujuan untuk memaksimalkan KOMPETENSI, KEMAMPUAN dan KAPASITAS peserta magang baik dari siswa SMK ataupun Mahasiswa untuk beradaptasi di lingkungan kerja. Sehingga mampu mengembangkan sikap profesional sesuai bidang keahliannya di perusahaan/industri.
@@ -26,6 +13,8 @@ function InformasiSarastya() {
           PKL/Prakerin merupakan program pendidikan magang bagi Siswa dan Mahasiswa Aktif untuk meningkatkan kompetensi dan penerapan pembelajaran dari sekolah atau kampus yang relevan dengan dunia kerja dan dunia industri. Program ini dilangsungkan dengan durasi minimal 6 bulan (1 semester).
         </p>
       </section>
+
+      <div className="section-divider" />
 
       <section id="syarat-pkl" className="info-section">
         <h2>Syarat PKL</h2>
@@ -43,6 +32,8 @@ function InformasiSarastya() {
         </ul>
       </section>
 
+      <div className="section-divider" />
+
       <section id="syarat-adm" className="info-section">
         <h2>Syarat Administrasi</h2>
         <ul>
@@ -56,7 +47,9 @@ function InformasiSarastya() {
         </ul>
       </section>
 
-      <section id="divisi" className="info-section">
+      <div className="section-divider" />
+
+      <section id="informasi-divisi" className="info-section">
         <h2>Divisi di Sarastya Technology</h2>
         <p>
           Perusahaan di bidang Pengembangan sistem/aplikasi (Process Automation) berbasis Business Process Management Suites (BPMS) dan Enterprise Resources Planning (ERP) yang mengintegrasikan People, Process dan Technology di perusahaan.

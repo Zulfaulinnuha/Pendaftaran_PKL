@@ -26,10 +26,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px; /* sebelumnya 1px — terlalu tipis */
+  padding: 6px 20px;
   background: linear-gradient(to right, #0d47a1, #1976d2);
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
   color: white;
 }
 
@@ -45,19 +45,24 @@ body {
 }
 
 .nav-logo-container {
-  background-color: white;
-  padding: 6px;
+  
+  padding: 4px;
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  width: 90px; /* Tambahkan ukuran tetap */
+  height: 90px;
+  overflow: hidden; /* Hindari logo meluber */
+  flex-shrink: 0; /* Agar logo tidak menyusut ketika space sempit */
 }
 
 .nav-logo {
-  height: 140px;
+  height: 200%;
+  width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.3));
 }
 
 .nav-links a {
@@ -74,7 +79,8 @@ body {
 
 .nav-right {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 4px; /* Atau 0px jika ingin menempel total */
   margin-right: 20px;
 }
 
@@ -243,4 +249,56 @@ body {
     width: 100%;
     max-width: 300px;
   }
+}
+.nav-profile-link {
+  margin-left: 4px; /* Sebelumnya 10px */
+  display: flex;
+  align-items: center;
+}
+
+.nav-profile-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.nav-profile-icon:hover {
+  transform: scale(1.1);
+}
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 12px;
+  padding: 6px 10px;
+  transition: background 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: #f0f0f0;
+  border-radius: 6px;
+}
+.logout-button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+.pembatas-pita {
+  height: 40px;
+  background: linear-gradient(to right, #1565c0, #42a5f5);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  margin-top: -10px;
+  margin-bottom: 40px;
 }
